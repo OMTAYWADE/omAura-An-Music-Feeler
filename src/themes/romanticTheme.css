@@ -133,8 +133,6 @@
     pointer-events: none;
 }
 
-;
-
 .wave1 {
     background: #ffb6d5;
     top: -300px;
@@ -227,8 +225,6 @@
 
     box-shadow: 0 0 15px rgba(255, 105, 180, .5);
 }
-
-;
 
 .inactive {
     opacity: 0.5;

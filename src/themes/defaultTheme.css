@@ -1,0 +1,340 @@
+.default-bg{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #87ceeb,
+      #bde0fe,
+      #d8f3dc
+    );
+}
+.sun{
+  position:absolute;
+
+  top:60px;
+  right:80px;
+
+  width:120px;
+  height:120px;
+
+  border-radius:50%;
+
+  background:#fde047;
+
+  box-shadow:
+    0 0 50px #fde047,
+    0 0 100px #fde047;
+
+  animation:sunGlow 6s ease-in-out infinite;
+}
+
+@keyframes sunGlow{
+  50%{
+    transform:scale(1.05);
+  }
+}
+.cloud{
+  position:absolute;
+
+  width:220px;
+  height:70px;
+
+  background:white;
+
+  border-radius:999px;
+
+  opacity:.75;
+}
+
+.cloud::before{
+  content:"";
+
+  position:absolute;
+
+  width:100px;
+  height:100px;
+
+  background:white;
+
+  border-radius:50%;
+
+  top:-35px;
+  left:40px;
+}
+
+.cloud::after{
+  content:"";
+
+  position:absolute;
+
+  width:80px;
+  height:80px;
+
+  background:white;
+
+  border-radius:50%;
+
+  top:-25px;
+  right:40px;
+}
+.cloud1{
+  top:80px;
+  animation:cloudMove1 70s linear infinite;
+}
+
+.cloud2{
+  top:180px;
+  animation:cloudMove2 90s linear infinite;
+}
+
+.cloud3{
+  top:120px;
+  animation:cloudMove3 110s linear infinite;
+}
+
+@keyframes cloudMove1{
+  from{
+    transform:translateX(-300px);
+  }
+
+  to{
+    transform:translateX(1800px);
+  }
+}
+
+@keyframes cloudMove2{
+  from{
+    transform:translateX(-500px);
+  }
+
+  to{
+    transform:translateX(1800px);
+  }
+}
+
+@keyframes cloudMove3{
+  from{
+    transform:translateX(-700px);
+  }
+
+  to{
+    transform:translateX(1800px);
+  }
+}
+
+.tree{
+  position:absolute;
+
+  left:80px;
+  bottom:230px;
+
+  width:150px;
+  height:250px;
+}
+
+.trunk{
+  position:absolute;
+
+  bottom:0;
+  left:60px;
+
+  width:30px;
+  height:120px;
+
+  background:#6b4423;
+}
+
+.leaves{
+  position:absolute;
+
+  top:0;
+
+  width:150px;
+  height:150px;
+
+  border-radius:50%;
+
+  background:#22c55e;
+
+  box-shadow:
+    -30px 20px #16a34a,
+    30px 20px #4ade80;
+}
+.river{
+  position:absolute;
+    z-index: 1;
+  right:0;
+  bottom:210px;
+
+  width:40%;
+  height:60px;
+
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(56,189,248,.8),
+      rgba(2,132,199,.9)
+    );
+}
+
+.river1{
+  position:absolute;
+    z-index: 1;
+  right:40%;
+  bottom:210px;
+
+  width:60%;
+  height:10px;
+
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(56,189,248,.8),
+      rgba(2,132,199,.9)
+    );
+}
+
+.river::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    repeating-radial-gradient(
+      ellipse at center,
+      rgba(255,255,255,.15) 0px,
+      rgba(255,255,255,.15) 2px,
+      transparent 2px,
+      transparent 25px
+    );
+
+  animation:
+    waterWave 8s linear infinite;
+}
+
+@keyframes waterWave{
+
+  from{
+    transform:
+      translateX(0);
+  }
+
+  to{
+    transform:
+      translateX(100px);
+  }
+}
+.river::after{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.2),
+      transparent
+    );
+
+  animation:
+    waterShine 5s linear infinite;
+}
+
+@keyframes waterShine{
+
+  from{
+    transform:
+      translateX(-100%);
+  }
+
+  to{
+    transform:
+      translateX(100%);
+  }
+}
+
+.grass-field{
+  position:absolute;
+
+  bottom:220px;
+
+  width:60%;
+  height:90px;
+  animation:
+    fieldShift 6s ease-in-out infinite;
+  overflow:hidden;
+}
+
+@keyframes fieldShift{
+
+  0%,100%{
+    transform:translateX(0);
+  }
+
+  50%{
+    transform:translateX(8px);
+  }
+}
+
+.grass-blade{
+  position:absolute;
+  bottom:0;
+
+  width:4px;
+  height:60px;
+
+  border-radius:999px;
+
+  background:
+    linear-gradient(
+      to top,
+      #15803d,
+      #22c55e,
+      #86efac
+    );
+
+  transform-origin:bottom center;
+}
+
+.wind .grass-blade{
+  animation:grassWave 2.5s ease-in-out infinite;
+}
+
+@keyframes grassWave{
+
+  0%{
+    transform:rotate(-18deg);
+  }
+
+  50%{
+    transform:rotate(22deg);
+  }
+
+  100%{
+    transform:rotate(-18deg);
+  }
+}
+
+@keyframes sway{
+  0%{
+    transform:rotate(-6deg);
+  }
+
+  50%{
+    transform:rotate(8deg);
+  }
+
+  100%{
+    transform:rotate(-6deg);
+  }
+}

@@ -1,0 +1,252 @@
+.romantic-bg {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 192, 203, .15), transparent 30%),
+        radial-gradient(circle at 80% 40%, rgba(255, 105, 180, .12), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(255, 182, 193, .10), transparent 30%);
+
+    animation: romanticPulse 8s ease-in-out infinite;
+}
+
+.hearts {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    contain: layout;
+}
+
+.heart {
+    position: absolute;
+    bottom: -100px;
+
+    color: #ff9ec9;
+
+    opacity: .7;
+
+    text-shadow:
+        0 0 15px #ff9ec9,
+        0 0 30px #ff69b4,
+        0 0 50px #ff69b4;
+
+    animation: floatHeart 20s linear infinite;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #ffd1e8;
+    box-shadow:
+        0 0 10px #ffd1e8,
+        0 0 20px #ff69b4;
+    animation:
+        drift 12s ease-in-out infinite,
+        twinkle 4s ease-in-out infinite;
+}
+
+@keyframes drift {
+
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    25% {
+        transform: translate(30px, -20px);
+    }
+
+    50% {
+        transform: translate(-20px, 25px);
+    }
+
+    75% {
+        transform: translate(15px, -30px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+
+}
+
+@keyframes twinkle {
+
+    0% {
+        opacity: .2;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    100% {
+        opacity: .2;
+        transform: scale(.8);
+    }
+
+}
+
+@keyframes floatHeart {
+    from {
+        transform:
+            translateY(0) rotate(0deg);
+    }
+
+    to {
+        transform:
+            translateY(-120vh) rotate(360deg);
+    }
+}
+
+@keyframes romanticPulse {
+
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.15);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+
+}
+
+.wave1,
+.wave2 {
+    position: absolute;
+    overflow: hidden;
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: .25;
+    pointer-events: none;
+}
+
+;
+
+.wave1 {
+    background: #ffb6d5;
+    top: -300px;
+    left: -300px;
+    animation: fog1 25s ease-in-out infinite alternate;
+}
+
+.wave2 {
+    background: #ff7abf;
+    bottom: -300px;
+    right: -300px;
+    animation: fog2 30s ease-in-out infinite alternate;
+}
+
+@keyframes fog1 {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(250px, 150px);
+    }
+}
+
+@keyframes fog2 {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-200px, -150px);
+    }
+}
+
+.playingBtn {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(255, 105, 180, .18);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 192, 203, .2);
+    color: #ffd1e8;
+    box-shadow: 0 0 30px rgba(255, 105, 180, .35);
+    transition: .3s;
+}
+
+.playingBtn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 45px rgba(255, 105, 180, .5);
+
+}
+
+.romantic-control {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 192, 203, .15);
+    color: #ffd1e8;
+    transition: .3s;
+}
+
+.romantic-control:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255, 105, 180, .3);
+}
+
+.volumeBtn {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 192, 203, .15);
+    color: #ffd1e8;
+}
+
+.active {
+    color: #ff9ec9;
+
+    box-shadow: 0 0 15px rgba(255, 105, 180, .5);
+}
+
+;
+
+.inactive {
+    opacity: 0.5;
+}
+
+.playListScroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.playListScroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.playListScroll::-webkit-scrollbar-thumb {
+    background: rgba(244, 114, 182, .35);
+    border-radius: 999px;
+}
+
+.playListScroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(244, 114, 182, .6);
+}
